@@ -1,0 +1,36 @@
+﻿@page
+@model PedelApp.Pages.TidsRegistrering.CreateModel
+@{
+}
+
+<section class="container-fluid">
+    <h1>TidsRegistrering</h1>
+    <article>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TidsRegistrering.Start" class="control-label"></label>
+                <input asp-for="TidsRegistrering.Start" class="form-control"/>
+                <span asp-validation-for="TidsRegistrering.Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TidsRegistrering.End" class="control-label"></label>
+                <input asp-for="TidsRegistrering.End" class="form-control"/>
+                <span asp-validation-for="TidsRegistrering.End" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="TidsRegistrering.PedelId" class="control-label"></label>
+                <input asp-for="TidsRegistrering.PedelId" class="form-control"/>
+                <span asp-validation-for="TidsRegistrering.PedelId" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="TidsRegistrering.RekvisitionsId" class="control-label"></label>
+                <input asp-for="TidsRegistrering.RekvisitionsId" class="form-control"/>
+                <span asp-validation-for="TidsRegistrering.RekvisitionsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </article>
+</section>

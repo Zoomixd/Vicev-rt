@@ -5,6 +5,8 @@ using Vicevært.Infrastructure.Database;
 using Vicevært.Web.Infrastructure;
 using Refit;
 using Vicevært.BoligData.DataAccess;
+using PedelApp.Contract;
+using PedelApp.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,13 @@ builder.Services.AddHttpClient<IBookingService, BookingServiceProxy>
     {
         client.BaseAddress =
             new Uri("https://localhost:7242");
+    });
+
+builder.Services.AddHttpClient<ITidsRegistreringService, TidsRegistreringServiceProxy>
+    (client =>
+    {
+        client.BaseAddress =
+        new Uri("https://localhost:7242/");
     });
 
 builder.Services.AddRefitClient<IBoligData>().ConfigureHttpClient(c =>

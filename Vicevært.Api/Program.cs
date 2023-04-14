@@ -1,4 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using PedelApp.Application.Contract;
+using PedelApp.Application.Contract.Dtos;
+using PedelApp.Application.Implementation;
+using PedelApp.Application.Infrastructure;
+using PedelApp.Domain.DomainServices;
+using PedelApp.Infrastructure.DomainServiceImpl;
+using PedelApp.Infrastructure.Queries;
+using PedelApp.Infrastructure.RepositoriesImpl;
 using Vicevært.Application.Contract;
 using Vicevært.Application.Contract.Dtos;
 using Vicevært.Application.Implementation;
@@ -35,6 +43,12 @@ builder.Services.AddScoped<IBookingCommand, BookingCommand>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingDomainServices, BookingDomainService>();
+
+builder.Services.AddControllers();
+builder.Services.AddScoped<ITidsRegistreringQuery, TidsRegistreringQuery>();
+builder.Services.AddScoped<ITidsRegistreringCommand, TidsRegistreringCommand>();
+builder.Services.AddScoped<ITidsRegistreringRepository, TidsRegistreringRepository>();
+builder.Services.AddScoped<ITidsRegistreringDomainService, TidsRegistreringDomainService>();
 
 
 

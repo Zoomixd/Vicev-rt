@@ -1,0 +1,63 @@
+﻿@page
+@model PedelApp.Pages.TidsRegistrering.IndexModel
+@{
+}
+
+<section class="container-fluid">
+    <h1>TidsRegistrering</h1>
+    <article>
+        <a asp-page="Create">Opret ny TidsRegistrering</a>
+    </article>
+
+    <article>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    <label asp-for="TidsRegistrerings.First().TidsRegistreringsId"></label>
+                </th>
+                <th>
+                    <label asp-for="TidsRegistrerings.First().Start"></label>
+                </th>
+                <th>
+                    <label asp-for="TidsRegistrerings.First().End"></label>
+                </th>
+                <th>
+                    <label asp-for="TidsRegistrerings.First().PedelId"></label>
+                </th>
+                <th>
+                    <label asp-for="TidsRegistrerings.First().RekvisitionsId"></label>
+                </th>
+                <th>
+                    <label>Action</label>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.TidsRegistrerings)
+            {
+                <tr>
+                    <td>
+                        @item.TidsRegistreringsId
+                    </td>
+                    <td>
+                        @item.Start
+                    </td>
+                    <td>
+                        @item.End
+                    </td>
+                    <td>
+                        @item.PedelId
+                    </td>
+                    <td>
+                        @item.RekvisitionsId
+                    </td>
+                    <td>                        
+                        <a asp-page="./Details" asp-route-id="@item.TidsRegistreringsId">Details</a>                        
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </article>
+</section>

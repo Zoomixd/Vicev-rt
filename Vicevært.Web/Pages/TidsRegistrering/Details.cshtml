@@ -1,0 +1,33 @@
+﻿@page
+@model PedelApp.Pages.TidsRegistrering.DetailsModel
+@{
+}
+
+<section class="container-fluid">
+    <h1>TidsRegistrering</h1>
+    <article>
+            <div>
+                <label asp-for="TidsRegistrering.Start"></label>
+                <input asp-for="TidsRegistrering.Start" class="form-control" readonly="readonly"/>
+            </div>
+            <div>
+                <label asp-for="TidsRegistrering.End"></label>
+                <input asp-for="TidsRegistrering.End" class="form-control" readonly="readonly"/>
+            </div>
+            <div>
+                <label asp-for="TidsRegistrering.PedelId"></label>
+                <input asp-for="TidsRegistrering.PedelId" class="form-control" readonly="readonly"/>
+            </div>
+            <div>
+                <label asp-for="TidsRegistrering.RekvisitionsId"></label>
+                <input asp-for="TidsRegistrering.RekvisitionsId" class="form-control" readonly="readonly"/>
+            </div>
+            <div>
+                <label asp-for="TidsRegistrering.TidsRegistreringsId"></label>
+                <input asp-for="TidsRegistrering.TidsRegistreringsId" class="form-control" readonly="readonly"/>
+            </div>
+            <div>
+                <a asp-page="./Index">Tilbage til liste</a>
+            </div>
+    </article>
+</section>
